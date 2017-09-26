@@ -1,0 +1,90 @@
+<!--
+  Generated template for the Logistics page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>物流</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   [showCancelButton]="showCancelButton"
+                   [cancelButtonText]="cancelButtonText"
+                   (ionCancel)="doQuery($event)"
+                   placeholder="{{placeHolderText}}">
+    </ion-searchbar>
+  </ion-toolbar>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-segment style="padding: 10px 16px;background: #fff;" [(ngModel)]="showType" padding (ionChange)="onShowTypeChange()">
+    <ion-segment-button value="logistics">
+      物流信息
+    </ion-segment-button>
+    <ion-segment-button value="infostore">
+      物流部
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class="I_list" *ngIf="showType == 'logistics'">
+    <ul>
+      <li (click)="goLogisticsDetail(logistics)" tappable *ngFor="let logistics of logisticsList" style="font-size: 14px;">
+        <div>
+          <span>出发地</span>
+          <span style="padding-left: 30%;color: red;font-weight: bold;">￥{{logistics.freightCharge}}</span>
+          <span style="float: right;">目的地</span>
+        </div>
+        <span ></span>
+
+        <div>
+          <span style="font-weight: bold;width: 50px;display: inline-block;">{{logistics.departure}}</span>
+          <span style="padding-left: 24%;">
+            <img src="./assets/images/002.png" style="width: 60px;">
+          </span>
+          <span style="float: right;font-weight: bold;width: 100px;white-space: nowrap;text-align: right;" >{{logistics.destination}}</span>
+        </div>
+
+        <div style="color: #666;">
+          <span><ion-icon name="md-person" style="font-size: 16px;padding-right: 6px;color: #06c1ae;"></ion-icon>{{logistics.infoDepartment.title}}</span>
+          <span style="float: right;font-size: 12px;">{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}发布</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="interest_list" *ngIf="showType == 'infostore'">
+    <ul>
+      <li *ngFor="let infostore of infostoreList" (click)="gotoLogisticsList(infostore)">
+        <a>
+          <img src="{{infostore.photoPath? infostore.photoPath : './assets/images/default.jpg'}}?imageView/2/w/100" >
+          <div class="list_r">
+            <p><span style="font-size: 14px;font-weight: bold;">{{infostore.title}}</span></p>
+            <p>联系方式：{{infostore.user.userName}} {{infostore.callNumber}}</p>
+            <p>主营业务：{{infostore.introduction}}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div [hidden]="infostoreList.length > 0" class="empty_tips" *ngIf="showType == 'infostore'">
+    没有查询到数据
+  </div>
+
+
+  <div [hidden]="logisticsList.length > 0" class="empty_tips" *ngIf="showType == 'logistics'">
+    没有查询到数据
+  </div>
+
+</ion-content>
