@@ -6,7 +6,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>物流</ion-title>
+    <ion-title>客户信息</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -30,10 +30,10 @@
 
   <ion-segment style="padding: 10px 16px;background: #fff;" [(ngModel)]="showType" padding (ionChange)="onShowTypeChange()">
     <ion-segment-button value="logistics">
-      物流信息
+      所有客户
     </ion-segment-button>
     <ion-segment-button value="infostore">
-      物流部
+      最近下单客户
     </ion-segment-button>
   </ion-segment>
 
@@ -56,8 +56,8 @@
         </div>
 
         <div style="color: #666;">
-          <span><ion-icon name="md-person" style="font-size: 16px;padding-right: 6px;color: #06c1ae;"></ion-icon>{{logistics.infoDepartment.title}}</span>
-          <span style="float: right;font-size: 12px;">{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}发布</span>
+          <span><ion-icon name="md-person" style="font-size: 16px;padding-right: 6px;color: #fabe00;"></ion-icon>{{logistics.infoDepartment.title}}</span>
+          <span style="float: right;font-size: 12px;">{{ logistics.updatedTime }}发布</span>
         </div>
       </li>
     </ul>

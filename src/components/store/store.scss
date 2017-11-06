@@ -1,0 +1,26 @@
+page-store{
+  ion-grid{
+    background: #fff;
+  }
+  .district{
+    border-right: 1px solid #ccc;
+    background: #f4f4f4;
+    text-align: center;
+  }
+  .active{
+    background: #fff;
+    border-right: none;
+  }
+  .empty_tips{
+    text-align: center;
+    padding-top: 40%;
+  }
+
+  .pList-scroll{
+    position: absolute;
+    top: 53px!important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

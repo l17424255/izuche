@@ -1,0 +1,74 @@
+<!--
+  Generated template for the InvoicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title mode="ios">我的发票</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-segment [(ngModel)]="showType" no-padding>
+    <ion-segment-button value="invoice">
+      发票信息
+    </ion-segment-button>
+    <ion-segment-button value="address">
+      配送地址
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="showType == 'invoice'">
+    <ion-list-header text-wrap>
+      <p>2017年7月1日起，单位报销需填写纳税人识别号，如未填写不能报销，一概不予退还</p>
+    </ion-list-header>
+    <ion-item-sliding>
+      <button ion-item [navPush]="invoiceDetail" [navParams]="{'id': 1}">
+        <ion-note>
+          发票抬头
+        </ion-note>
+        太仓途安汽车租赁有限公司
+      </button>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="delInvoice()">删除</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list margin-top *ngIf="showType == 'address'">
+    <ion-item-sliding>
+      <ion-item>
+        <h2>徐朝峰</h2>
+        <ion-note>139****5789</ion-note>
+        <p>江苏省苏州市太仓市江苏太仓市太平南路18号大润发烦烦烦烦烦</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger">删除</button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <h2>徐朝峰</h2>
+        <ion-note>139****5789</ion-note>
+        <p>江苏太仓市太平南路18号</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger">删除</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer no-padding>
+  <ion-toolbar no-padding no-lines>
+    <button [hidden]="showType == 'address'" [navPush]="invoiceDetail" ion-button full no-margin>新增发票信息</button>
+    <button [hidden]="showType == 'invoice'" ion-button full no-margin>新增常用地址</button>
+  </ion-toolbar>
+</ion-footer>

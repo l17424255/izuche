@@ -1,0 +1,107 @@
+<ion-content>
+
+  <!--<ion-refresher (ionRefresh)="doRefresh($event)">-->
+    <!--<ion-refresher-content></ion-refresher-content>-->
+  <!--</ion-refresher>-->
+
+  <div class="user-info" tappable (click)="gotoMeProfilePage()" *ngIf="true">
+    <div class="avatar">
+      <img style="border: 0;width: 45px;height: 45px;margin-top: 3px;;border-radius: 50%;" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar)}}?imageView/2/w/100"/>
+    </div>
+    <div class="name">
+      <p icon-right>
+        李明光
+        <ion-icon name="arrow-forward" no-padding></ion-icon>
+      </p>
+      <p>普卡会员{{ heyApp.authService.userInfo?.phoneNum || '' }}</p>
+    </div>
+    <div class="background">
+      <img src="../assets/images/bg.jpg" width="100%" height="100%">
+    </div>
+  </div>
+
+  <!--<div style="background-color: #fabe00;padding: 11% 5% 11% 15%;height: 125px;" tappable (click)="gotoMeProfilePage()" *ngIf="true">-->
+    <!--<div style="width: 20%;float: left;">-->
+      <!--<img style="border: 0;width: 50px;height: 50px;margin-top: 3px;;border-radius: 50%;" src="./assets/images/touxiang.png"/>-->
+    <!--</div>-->
+    <!--<div style="width: 40%;margin-left: 5%;float: left;">-->
+      <!--<p style="font-size: 15px;color: #fff;line-height: 30px;">您好</p>-->
+      <!--<p style="font-size: 14px;color: #fff;line-height: 15px;">立即登录<ion-icon name="arrow-forward" style="font-size: 14px;padding-left: 10px;"></ion-icon></p>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <ion-list>
+    <ion-item>
+      <p>我的钱包</p>
+      <ion-grid text-center>
+        <ion-row>
+          <ion-col style="border-right: 1px solid #ccc;">
+            <h2><i>0</i> 张</h2>
+            <p>银行卡</p>
+          </ion-col>
+          <ion-col style="border-right: 1px solid #ccc;">
+            <h2><i>0</i> 元</h2>
+            <p>账户余额</p>
+          </ion-col>
+          <ion-col style="border-right: 1px solid #ccc;">
+            <h2><i>0</i> 张</h2>
+            <p>优惠券</p>
+          </ion-col>
+          <ion-col>
+            <h2><i>0</i> 分</h2>
+            <p>可用积分</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <p color-dark>待办事项</p>
+      <ion-grid text-center>
+        <ion-row>
+          <ion-col style="border-right: 1px solid #ccc;">
+            <h2><i>0</i></h2>
+            <p>违章处理</p>
+          </ion-col>
+          <ion-col>
+            <h2><i>0</i></h2>
+            <p>待支付项</p>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item [navPush]="InvoicePage">
+      <ion-icon name="fapiao"></ion-icon>
+      开票管理
+    </button>
+    <button ion-item (click)="openTermsPage()">
+      <ion-icon name="weizhang"></ion-icon>
+      违章记录
+    </button>
+    <button ion-item [navPush]="FeedbackPage">
+      <ion-icon name="chatbubbles"></ion-icon>
+      意见反馈
+    </button>
+    <button ion-item (click)="gotoContact()">
+      <ion-icon name="kefu"></ion-icon>
+      客服电话
+      <ion-note item-end>18201938314</ion-note>
+    </button>
+    <button ion-item [navPush]="CommproblemPage">
+      <ion-icon name="wenti"></ion-icon>
+      常见问题
+    </button>
+    <button ion-item [navPush]="MeSettingPage">
+      <ion-icon name="settings"></ion-icon>
+      设置
+    </button>
+  </ion-list>
+
+</ion-content>

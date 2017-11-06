@@ -1,0 +1,32 @@
+<div class="pList-scroll">
+  <ion-grid [hidden]="cities.length == 0" no-padding>
+    <ion-row style="height: 100%;">
+      <ion-col col-3 no-padding>
+        <ion-list scrollY="true">
+          <ion-item no-padding class="district" *ngFor="let city of cities, let i = index"
+                    [ngClass]="{'active': i==currentIndex}" (click)="selectMenu(i)">{{city.title}}</ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-9>
+        <ion-scroll scrollY="true" style="height: 100%">
+          <ion-list>
+            <ion-item-group *ngFor="let city of cities, let i = index">
+              <ion-item-divider color="light">{{city.title}}</ion-item-divider>
+              <ion-item *ngFor="let store of city.stores">
+                <h3 text-nowrap>
+                  {{store.name}}
+                  <!--<ion-icon name="feiji" text-lg-center color="primary"></ion-icon>-->
+                  <!--<ion-icon name="24h" color="primary"></ion-icon>-->
+                </h3>
+                <p>宝山区水产西路680弄5号</p>
+              </ion-item>
+            </ion-item-group>
+          </ion-list>
+        </ion-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div [hidden]="cities.length > 0" class="empty_tips">
+    没有查询到数据
+  </div>
+</div>

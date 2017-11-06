@@ -34,7 +34,8 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  //primary:    #488aff,
+  primary:    #fabe00,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -75,7 +76,7 @@ $colors: (
 
 // Ionicons
 // --------------------------------------------------
-// The premium icon font for Ionic. For more info, please see:
+// The premium icon fonts for Ionic. For more info, please see:
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
@@ -93,12 +94,12 @@ $colors: (
 @import "main";
 @import "style";
 
-$theme-color: #06c1ae;
+$theme-color: #fabe00;
 $background-color: #f3f3f3;
 $text-color: #333;
 $background-color: #fff;
 $text-font-size: 1.4rem;
-$refresher-icon-color: #06c1ae;
+$refresher-icon-color: #fabe00;
 
 $tabs-ios-tab-text-color-active: $theme-color;
 $tabs-ios-tab-icon-color-active: $theme-color;
@@ -106,9 +107,13 @@ $tabs-ios-tab-text-color: #666;
 $tabs-ios-tab-icon-color: #666;
 $toolbar-ios-button-color: $theme-color;
 
-$segment-button-ios-background-color-activated: #06c1ae;
+$segment-button-ios-background-color-activated: #fabe00;
 $segment-button-ios-height: 35px;
 $segment-button-ios-line-height: 35px;
+
+$button-ios-text-color: #fff;
+$button-md-text-color: #fff;
+
 .ion-title {
   text-align: center;
 }
@@ -118,7 +123,7 @@ $segment-button-ios-line-height: 35px;
 //}
 
 .button-ios-primary{
-  background-color: #06c1ae !important;
+  //background-color: #fabe00 !important;
 }
 
 .tabbar{
@@ -169,8 +174,8 @@ ion-content {
   border-radius: 0 !important;
 }
 .button-outline-ios{
-  border-color: #06c1ae !important;
-  color: #06c1ae !important;
+  border-color: #fabe00 !important;
+  color: #fabe00 !important;
 }
 
 .toolbar .searchbar-ios .searchbar-ios-cancel {
@@ -186,14 +191,14 @@ ion-content {
 }
 .icon_phone{
   position: relative !important;
-  color: #06c1ae !important;
+  color: #fabe00 !important;
   padding: 0 5px !important;
   font-size: 20px !important;
   top: 4px !important;
 }
 
 .text_phone{
-  color: #06c1ae !important;
+  color: #fabe00 !important;
   text-decoration: underline;
 }
 .interest_list {

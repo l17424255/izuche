@@ -6,6 +6,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { IonicModule, Events } from 'ionic-angular';
 
 import { AppService } from './services/app.service';
+import { Helper } from './services/helper.service';
 
 import {LocalStorageService} from "./services/localStorage.service";
 
@@ -19,6 +20,7 @@ import {LocalStorageService} from "./services/localStorage.service";
   entryComponents: [
   ],
   providers: [
+    Helper,
     AppService,
     LocalStorageService
   ],

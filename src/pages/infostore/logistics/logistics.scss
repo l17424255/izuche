@@ -1,0 +1,67 @@
+page-logistics{
+  .I_list {
+    height: auto;
+    overflow: hidden;
+    padding: 0;
+    background-color: #f3f3f3 !important;
+  }
+
+  .I_list ul li {
+    padding: 1rem 16px;
+    background: #fff;
+    height: auto;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    line-height: 2rem;
+    border-bottom: .1rem #EFEFEF solid;
+    position: relative;
+  }
+
+  .search_input{
+    width: 39%;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.08);
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .search_icon{
+    width: 5%;
+    padding: 0 20px 0 10px;
+    font-size: 20px;
+    color: #fabe00 !important;
+  }
+
+  .search_sec{
+    border-top: 0.55px solid transparent;
+    height: 55px;
+    padding: 10px 10px;
+  }
+
+  .toolbar .searchbar-ios .searchbar-ios-cancel{
+    color: #fabe00 !important;
+    display: block !important;
+    padding-left: 8px;
+  }
+
+  .interest_list {
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .interest_list a img {
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    margin-right: 12px;
+  }
+
+  .list_r {
+    line-height: 21px;
+  }
+
+  .interest_list ul li {
+    padding-bottom: 5px;
+    margin-top: 10px;
+  }
+}

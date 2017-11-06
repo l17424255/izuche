@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar mode="ios">
+    <ion-title mode="ios">附近</ion-title>
+    <ion-buttons end>
+      <a href="#" padding class="button button-clear" (click)="toggleDiv()">{{isShowMap?'列表':'地图'}}</a>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content scroll="false">
+
+  <div class="map" [hidden]="!isShowMap">
+    <ion-toolbar no-border-top>
+      <ion-searchbar class="light-bg"  color="primary"
+                     id="pickerInput"
+                     [(ngModel)]="queryText"
+                     [showCancelButton]="showCancelButton"
+                     [cancelButtonText]="cancelButtonText"
+                     (ionCancel)="doQuery($event)"
+                     placeholder="{{placeHolderText}}">
+      </ion-searchbar>
+    </ion-toolbar>
+
+    <div id="container" style="width: 100%;height: 100%;"></div>
+  </div>
+  <div class="store" [hidden]="isShowMap">
+    <button ion-item mode="ios" icon-end>
+      用户城市
+      <ion-note item-end>
+        上海
+      </ion-note>
+    </button>
+    <!--<ion-item class="bar bar-subheader" border-bottom (click)="selectCity()">-->
+      <!--<span item-left="">用车城市</span>-->
+      <!--<button ion-button clear icon-end item-end style="margin: 0;">-->
+        <!--<ion-label no-margin>上海</ion-label>-->
+        <!--<ion-icon name='arrow-forward'></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-item>-->
+    <page-store></page-store>
+
+    <div [hidden]="carList.length > 0" class="empty_tips">
+      没有查询到数据
+    </div>
+  </div>
+  <ion-infinite-scroll
+    ng-if="moreDataCanBeLoaded()"
+    icon="ion-loading-c"
+    on-infinite="loadMoreData()">
+  </ion-infinite-scroll>
+
+</ion-content>

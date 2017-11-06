@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Events, /*Platform,*/ NavController } from 'ionic-angular';
 
-import { MePage } from '../user/me';
-import { CoalPage } from '../coal/coal';
+import { MePage } from '../user/pages/me/me';
+import { NearByPage } from '../nearby/nearby';
+import { OrderPage } from '../order/pages/order-list/order';
 // import { InfostorePage } from '../../modules/infostore/pages/infostore/infostore';
 import {LogisticsPage} from "../infostore/logistics/logistics";
 import { HomePage } from '../home/home';
@@ -13,9 +14,9 @@ import { HomePage } from '../home/home';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = CoalPage;
-  tab3Root = CoalPage;
-  // tab4Root = InfostorePage;
+  tab2Root = NearByPage;
+  tab3Root = OrderPage;
+  // tab4Root = MePage;
   tab5Root = MePage;
   tab6Root = LogisticsPage;
 
