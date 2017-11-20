@@ -5,12 +5,14 @@ import { CommonModule } from '../modules/common/common.module';
 import { AmapComponent } from './amap/amap';
 import { StoreComponent } from './store/store';
 import {CityComponent} from "./city/city";
+import { EmptyViewComponent } from './empty-view/empty-view';
 
 @NgModule({
 	declarations: [
 	  AmapComponent,
     StoreComponent,
-    CityComponent
+    CityComponent,
+    EmptyViewComponent
   ],
 	imports: [
 	  CommonModule
@@ -18,7 +20,8 @@ import {CityComponent} from "./city/city";
 	exports: [
 	  AmapComponent,
     StoreComponent,
-    CityComponent
+    CityComponent,
+    EmptyViewComponent
   ]
 })
 export class ComponentsModule {}

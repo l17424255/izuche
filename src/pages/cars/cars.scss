@@ -1,0 +1,33 @@
+page-cars {
+  .car-bt{
+    font-size: 1rem;
+    color:#999;
+  }
+  .price{
+    color: $theme-color;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  .car-type{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  ion-item{
+    border-bottom: 1px solid #e0dfe4!important;
+  }
+
+  ion-label{
+    margin-bottom: 0 !important;
+  }
+
+  .hasCar{
+    color:#8e9093;
+    font-size: 1rem;
+  }
+
+  .text{
+    color: #8e9093;
+    text-align: center;
+  }
+}

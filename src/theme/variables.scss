@@ -36,17 +36,20 @@ $app-direction: ltr;
 $colors: (
   //primary:    #488aff,
   primary:    #fabe00,
-  secondary:  #32db64,
+  //secondary:  #32db64,
+  secondary:  #488aff,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  gray:       #999,
 );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$checkbox-ios-icon-checkmark-color: #fff;
+$button-ios-outline-text-color-activated: #fff;
 
 
 
@@ -54,6 +57,7 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$item-md-detail-push-show: true;
 
 
 
@@ -113,6 +117,7 @@ $segment-button-ios-line-height: 35px;
 
 $button-ios-text-color: #fff;
 $button-md-text-color: #fff;
+$img-placeholder-background: #fff;
 
 .ion-title {
   text-align: center;

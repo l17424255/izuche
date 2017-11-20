@@ -6,6 +6,8 @@ import {AppGlobal} from "../../app/app.global";
 import { LifestoreList } from "../../modules/home/pages/lifestore/lifestore-list";
 import {LocalStorageService} from "../../modules/common/services/localStorage.service";
 import {AppService} from "../../modules/common/services/app.service";
+import {AddOrderHeadPage} from "../add-order-head/add-order-head";
+import {LongIeasePage} from "../long-iease/long-iease";
 
 @Component({
   selector: 'page-home',
@@ -20,6 +22,8 @@ export class HomePage {
   isInfiniteEnabled: boolean = true;
   areaName: string = "地区";
   notice: string = "欢迎来到神州租车app，这里有最实用的功能，最及时的信息！";
+  addOrderPage = AddOrderHeadPage;
+  longIeasePage = LongIeasePage;
 
   @ViewChild('mySlider') slider: Slides;
   @ViewChild(Content) content: Content;　　//获取界面Content的实例对象
@@ -119,14 +123,14 @@ export class HomePage {
 
     this.pageNumber = 0;
     let data = {pageNumber: this.pageNumber};
-    this.homeService.loadNewsList(data)
-      .then(ret => {
-          console.log(ret);
-          this.newsList = ret.content.slice(0,3);
-        }
-      ).catch(err=>{
-        console.log(err);
-    });
+    // this.homeService.loadNewsList(data)
+    //   .then(ret => {
+    //       console.log(ret);
+    //       this.newsList = ret.content.slice(0,3);
+    //     }
+    //   ).catch(err=>{
+    //     console.log(err);
+    // });
   }
 
 }

@@ -12,7 +12,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 export class NearByPage {
 
-  isShowMap:boolean = false;
+  isShowMap:boolean = true;
   queryText: string;
   cancelButtonText: string="搜索";
   placeHolderText: string = "搜索门店";

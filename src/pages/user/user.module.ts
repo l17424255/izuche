@@ -13,6 +13,7 @@ import { InvoicePage } from './pages/invoice/invoice';
 import { InvoiceDetailPage } from './pages/invoice-detail/invoice-detail';
 import {FeedbackPage} from "./pages/feedback/feedback";
 import {CommproblemPage} from "./pages/commproblem/commproblem";
+import {SignInPage} from "../sign-in/sign-in";
 // import {IonicImageViewerModule} from "ionic-img-viewer";
 
 @NgModule({
@@ -80,5 +81,11 @@ export class UserModule {
   // Subscribe events
   subscribeEvents() {
     //
+    this.events.subscribe('app:gotoLogin', (params) => {
+      // this.heyApp.utilityComp.presentModal(AuthenticatePage);
+      let modal = this.modalCtrl.create(SignInPage)
+      modal.present();
+      console.log('present login page');
+    });
   }
 }

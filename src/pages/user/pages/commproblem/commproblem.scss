@@ -1,3 +1,10 @@
 page-commproblem {
-
+  h3{
+    font-weight: 400 !important;
+    color: $text-color;
+  }
+  p{
+    line-height: 1.7rem !important;
+    color: $tabs-ios-tab-text-color !important;
+  }
 }

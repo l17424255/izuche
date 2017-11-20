@@ -23,6 +23,12 @@ import { ComponentsModule } from '../components/components.module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CityService } from "../components/city/services/city.service";
+import {SignInPage} from "../pages/sign-in/sign-in";
+import {SignUpPage} from "../pages/sign-up/sign-up";
+import {AddOrderHeadPage} from "../pages/add-order-head/add-order-head";
+import {CarsPage} from "../pages/cars/cars";
+import {LongIeasePage} from "../pages/long-iease/long-iease";
+import {LongIeaseContactPage} from "../pages/long-iease-contact/long-iease-contact";
 
 @NgModule({
   declarations: [
@@ -32,7 +38,12 @@ import { CityService } from "../components/city/services/city.service";
     TabsPage,
     LogisticsPage,
     NearByPage,
-
+    SignInPage,
+    SignUpPage,
+    AddOrderHeadPage,
+    CarsPage,
+    LongIeasePage,
+    LongIeaseContactPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,13 @@ import { CityService } from "../components/city/services/city.service";
     HomePage,
     NearByPage,
     TabsPage,
-    LogisticsPage
+    LogisticsPage,
+    SignInPage,
+    SignUpPage,
+    AddOrderHeadPage,
+    CarsPage,
+    LongIeasePage,
+    LongIeaseContactPage
   ],
   providers: [
     StatusBar,

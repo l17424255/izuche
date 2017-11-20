@@ -1,0 +1,42 @@
+<!--
+  Generated template for the LongIeaseContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>联系信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <ion-item no-lines round>
+      <ion-input clearInput type="text" placeholder="企业名称"></ion-input>
+    </ion-item>
+    <ion-item no-lines margin-top>
+      <ion-input clearInput type="text" placeholder="联系人"></ion-input>
+      <ion-note item-end color="danger">*</ion-note>
+    </ion-item>
+    <ion-item no-lines margin-top>
+      <ion-input clearInput type="tel" placeholder="联系人手机号码"></ion-input>
+      <ion-note item-end color="danger">*</ion-note>
+    </ion-item>
+    <ion-item no-lines margin-top>
+      <ion-input clearInput type="email" placeholder="电子邮件"></ion-input>
+    </ion-item>
+    <ion-item no-lines margin-top>
+      <ion-textarea rows="5" placeholder="补充信息"></ion-textarea>
+    </ion-item>
+
+    <div margin-top>
+      <button type="submit" ion-button block
+              [disabled]="!form.valid">
+        提交需要
+      </button>
+    </div>
+  </form>
+</ion-content>

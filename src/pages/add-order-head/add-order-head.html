@@ -1,0 +1,71 @@
+<!--
+  Generated template for the AddOrderHeadPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>到店取还</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+    <ion-list margin-bottom>
+      <ion-item>
+        <ion-icon name="quche" item-start style="color:dodgerblue;"></ion-icon>
+          <ion-label color="drak">
+            宁波
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </ion-label>
+          <ion-input type="tel" clearInput placeholder="请选择门店"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="huanche" item-start style="color:firebrick;"></ion-icon>
+        <ion-label color="drak">
+          宁波
+          <ion-icon name="md-arrow-dropdown"></ion-icon>
+        </ion-label>
+        <ion-input type="tel" clearInput placeholder="请选择门店">鄞州南部商务区还车点</ion-input>
+        <!--<ion-note item-start>-->
+          <!--还车位置-->
+        <!--</ion-note>-->
+      </ion-item>
+      <ion-item text-center>
+        <ion-icon name="shijian" item-start></ion-icon>
+        <ion-row>
+          <ion-col col-4>
+            <h2>11-13</h2>
+            <p>周一 20:00</p>
+          </ion-col>
+          <ion-col col-4>
+            <h2 class="total">2</h2>
+            <p>天</p>
+          </ion-col>
+          <ion-col col-4>
+            <h2>11-15</h2>
+            <p>周三 20:00</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+    <div padding-horizontal>
+      <ion-note padding-left>
+        <ion-icon name="ios-volume-up"></ion-icon>
+        部分城市指定区域，免费上门送取车!
+      </ion-note>
+      <button margin-top type="submit" ion-button block [color]="form.valid ? '' : 'gray'"
+              [disabled]="!form.valid">
+        去选车
+      </button>
+    </div>
+
+  </form>
+
+</ion-content>
